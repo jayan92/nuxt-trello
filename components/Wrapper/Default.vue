@@ -3,7 +3,7 @@
     <header class="p-2 border-b dark:border-gray-700 bg-white dark:bg-gray-800">
       <UContainer>
         <div class="flex justify-between">
-          <NuxtLink to="/"><Icon class="w-8 h-8" /></NuxtLink>
+          <NuxtLink to="/"><AppLogo /></NuxtLink>
 
           <div class="inline-flex justify-end gap-4 items-center">
             <slot name="action"></slot>

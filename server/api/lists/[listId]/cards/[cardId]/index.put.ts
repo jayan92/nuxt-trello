@@ -1,4 +1,4 @@
-import { Validator } from "#nuxt-server-utils";
+import { validateSchema } from "~/utils/validate";
 import CardSchema from "~/schemas/Card.schema";
 import { Card } from "~/server/models/Card";
 
@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
   const cardId = getRouterParam(event, "cardId");
 
-  Validator.validateSchema(CardSchema.partial(), body);
+  validateSchema(CardSchema.partial(), body);
 
   const updatedCard = await Card.findOneAndUpdate(
     {

@@ -1,4 +1,4 @@
-import { Validator } from "#nuxt-server-utils";
+import { validateSchema } from "~/utils/validate";
 import ListSchema from "~/schemas/List.schema";
 import { List } from "~/server/models/List";
 
@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
   const body = await readBody(event);
 
-  Validator.validateSchema(ListSchema.partial(), body);
+  validateSchema(ListSchema.partial(), body);
 
   const updatedLists = await List.findOneAndUpdate(
     {

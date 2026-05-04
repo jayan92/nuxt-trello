@@ -1,12 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  modules: ["@nuxt/ui", "nuxt-server-utils", "@sidebase/nuxt-auth", "@nuxt/image"],
+  devtools: { enabled: false },
+  modules: ["@nuxt/ui", "@sidebase/nuxt-auth", "@nuxt/image"],
   runtimeConfig: {
     auth: {
       origin: process.env.AUTH_ORIGIN,
       secret: process.env.AUTH_SECRET,
     },
+    mongodbUri: process.env.MONGODB_URI,
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
     stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
     public: {
@@ -25,7 +26,4 @@ export default defineNuxtConfig({
     preference: "light",
   },
   ui: {},
-  nuxtServerUtils: {
-    mongodbUri: process.env.MONGODB_URI,
-  },
 });

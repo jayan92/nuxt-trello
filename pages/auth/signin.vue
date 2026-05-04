@@ -35,8 +35,8 @@ useHead({
 });
 
 const formState = reactive({
-  email: undefined,
-  password: undefined,
+  email: "demo@nrello.com",
+  password: "Demo1234!",
 });
 
 const isLoading = ref(false);

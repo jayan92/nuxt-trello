@@ -1,11 +1,11 @@
-import { Validator } from "#nuxt-server-utils";
+import { validateSchema } from "~/utils/validate";
 import BoardSchema from "~/schemas/Board.schema";
 import { Board } from "~/server/models/Board";
 import type { UserDocument } from "~/server/models/User";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
-  Validator.validateSchema(BoardSchema, body);
+  validateSchema(BoardSchema, body);
 
   const user = event.context.user as UserDocument;
 

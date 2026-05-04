@@ -1,4 +1,4 @@
-import { Validator } from "#nuxt-server-utils";
+import { validateSchema } from "~/utils/validate";
 import BoardSchema from "~/schemas/Board.schema";
 import { Board } from "~/server/models/Board";
 
@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
   const body = await readBody(event);
 
-  Validator.validateSchema(BoardSchema.partial(), body);
+  validateSchema(BoardSchema.partial(), body);
 
   const board = await Board.updateOne({ _id: boardId, owner: user._id }, { $set: body });
 

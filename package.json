@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "seed": "node scripts/seed.mjs"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -17,6 +18,7 @@
     "mongoose": "^8.0.3",
     "nuxt": "^3.8.2",
     "nuxt-server-utils": "^0.0.7",
+    "tailwindcss": "^3.4.19",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5",
     "zod": "^3.22.4"
